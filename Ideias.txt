@@ -1,0 +1,44 @@
+Objetivo: Motivar as pessoas a concluir suas metas.
+
+De onde veio a ideia: Necessidades pessoais como ir diariamente à academia, se alimentar melhor e estudar diáriamente.
+
+Estratégia para concluir o objetivo: Criar um sistema em que usuários poderão registrar suas metas, e, para essas, adicionar tarefas como por exemplo reduzir o consumo de frituras. Após registrada, o usuário poderá diariamente marcar a tarefa como concluida e por meio da GAMEFICAÇÃO ter uma representação gráfica de seu progresso. Além disso, a plataforma contará também com um sistema de amizades/conexões em que os usuários poderão criar grupos com metas interligadas e compartilhar seu progresso. Ademais, terá também um feed geral onde os usuários receberão postagens de perfis públicos baseado em categorias como "Alimentação saudável", "Estudo", "Exercicio físico" e entre outras.
+
+Tecnologias:
+
+Backend:
+- Java
+- Springboot
+- Springsecurity
+- JWT
+- Postman
+
+Frontend:
+obs: pouco pensado ainda.
+- Javascript ou Typescript
+- React ou Angular
+- Figma
+
+
+Regras de negocio:
+1 - Um usuário só pode criar metas se estiver autenticado;
+2 - Um usuário pode ter várias metas;
+3 - Uma meta pode ter várias tarefas;
+4 - Um usuário não autenticado poderá apenas ver o feed;
+5 - Um usuário pode ter várias conexões;
+6 - Um usuário só pode ver o perfil de outra pessoa se esse for público;
+7 - Se um perfil for público, só serão visíveis as metas que também forem públicas;
+8 - Os usuários pode publicar suas conquistas;
+9 - As publicações podem ter várias categorias;
+10 - Quando o tempo de conclusão setado pelo usuário expirar, o sistema deverá enviar uma notificação para o usuário, motivando-o;
+11 - Somente um administrador ou o usuário proprietário da meta/tarefa pode cadastrar, atualizar e remover ela;
+12 - O usuário deve fornecer nome, senha e email para registrar sua conta;
+13 - O email fornecido deverá passar por uma verificação onde será enviado um código no email pro usuário colocar no sistema;
+14 - O código de verificação do email terá 5 minutos de validade e o usuário terá 3 tentativas para inseri-lo corretamente;
+15 - A senha fornecida no momento da criação da conta deverá ter mais de 8 caracteres, incluindo ao menos uma letra maiúscula, uma minúscula, um número e um caracter especial;
+16 - O título e descrição da meta e também o título das tarefas devem passar por um filtro de palavras ofensivas;
+
+
+
+Outros:
+- Criar sistema de nível conforme a pessoa mantém a constância;
