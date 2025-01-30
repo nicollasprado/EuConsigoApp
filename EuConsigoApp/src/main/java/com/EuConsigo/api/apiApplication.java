@@ -1,13 +1,13 @@
-package com.EuConsigo.EuConsigoApp;
+package com.EuConsigo.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EuConsigoAppApplication {
+public class apiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EuConsigoAppApplication.class, args);
+		SpringApplication.run(apiApplication.class, args);
 	}
 
 }
