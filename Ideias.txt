@@ -2,7 +2,11 @@ Objetivo: Motivar as pessoas a concluir suas metas.
 
 De onde veio a ideia: Necessidades pessoais como ir diariamente à academia, se alimentar melhor e estudar diáriamente.
 
-Estratégia para concluir o objetivo: Criar um sistema em que usuários poderão registrar suas metas, e, para essas, adicionar tarefas como por exemplo reduzir o consumo de frituras. Após registrada, o usuário poderá diariamente marcar a tarefa como concluida e por meio da GAMEFICAÇÃO ter uma representação gráfica de seu progresso. Além disso, a plataforma contará também com um sistema de amizades/conexões em que os usuários poderão criar grupos com metas interligadas e compartilhar seu progresso. Ademais, terá também um feed geral onde os usuários receberão postagens de perfis públicos baseado em categorias como "Alimentação saudável", "Estudo", "Exercicio físico" e entre outras.
+Estratégia para concluir o objetivo:
+Criar um sistema em que usuários poderão registrar suas metas, e, para essas, adicionar tarefas como por exemplo reduzir o consumo de frituras.
+Após registrada, o usuário poderá diariamente marcar a tarefa como concluida e por meio da GAMEFICAÇÃO ter uma representação gráfica de seu progresso.
+Além disso, a plataforma contará também com um sistema de amizades/conexões em que os usuários poderão criar grupos com metas interligadas e compartilhar seu progresso.
+Ademais, terá também um feed geral onde os usuários receberão postagens de perfis públicos baseado em categorias como "Alimentação saudável", "Estudo", "Exercicio físico" e entre outras.
 
 Tecnologias:
 
