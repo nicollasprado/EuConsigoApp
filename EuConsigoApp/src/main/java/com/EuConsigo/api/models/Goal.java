@@ -2,6 +2,7 @@ package com.EuConsigo.api.models;
 
 import com.EuConsigo.api.models.enums.VisibilityType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonValue;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -42,6 +43,7 @@ public class Goal {
 
     @Column(name = "visibility", nullable = false)
     @NotNull
+    @JsonValue
     private VisibilityType visibility;
 
     @Column(name = "deadline_date")

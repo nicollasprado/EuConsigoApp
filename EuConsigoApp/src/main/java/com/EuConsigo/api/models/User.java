@@ -3,8 +3,10 @@ package com.EuConsigo.api.models;
 import com.EuConsigo.api.models.enums.VisibilityType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
@@ -49,11 +51,14 @@ public class User {
     private LocalDateTime creationDate;
 
     @Column(name = "visibility", nullable = false)
+    @NotNull
+    @JsonValue
     private VisibilityType visibility;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "user_id")
+    @OneToMany(mappedBy = "userId")
     private ArrayList<Goal> goals;
+
     /*
     @JsonIgnore
     private ArrayList<User> connections;
