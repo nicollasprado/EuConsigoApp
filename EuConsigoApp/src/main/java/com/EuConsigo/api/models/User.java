@@ -26,16 +26,18 @@ public class User {
 
     @Column(name = "username", nullable = false)
     @NotBlank(message = "Username is mandatory.")
+    @Pattern(regexp = "^[A-Za-z]+$")
     private String username;
 
     @Column(name = "password", nullable = false)
     @NotBlank(message = "Password is mandatory")
     @Size(min = 8, max = 128)
-    // Arrumando ainda:  @Pattern(regexp = "[^(?=.+[A-Za-z])(?=.+\\d)(?=.+[!@#$%&*?])]")
+    @Pattern(regexp = "(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%&*?]).+")
     private String password;
 
     @Column(name = "email", nullable = false)
     @NotBlank
+    @Pattern(regexp = "[A-Z]|[a-z]|[0-9].+(?=.+@)")
     private String email;
 
     @Column(name = "creation_date", nullable = false, updatable = false)
