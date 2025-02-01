@@ -1,6 +1,8 @@
 package com.EuConsigo.api.models;
 
 import com.EuConsigo.api.models.enums.VisibilityType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -10,6 +12,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.UUID;
 
 @Entity
@@ -17,7 +20,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 public class User {
-    public static final String TABLE_NAME = "user";
+    public static final String TABLE_NAME = "users";
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -30,6 +33,7 @@ public class User {
     private String username;
 
     @Column(name = "password", nullable = false)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @NotBlank(message = "Password is mandatory")
     @Size(min = 8, max = 128)
     @Pattern(regexp = "(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%&*?]).+")
@@ -47,10 +51,10 @@ public class User {
     @Column(name = "visibility", nullable = false)
     private VisibilityType visibility;
 
-    /*
     @JsonIgnore
+    @OneToMany(mappedBy = "goal.user_id")
     private ArrayList<Goal> goals;
-
+    /*
     @JsonIgnore
     private ArrayList<User> connections;
     */
