@@ -41,7 +41,7 @@ public class User {
 
     @Column(name = "email", nullable = false)
     @NotBlank
-    @Pattern(regexp = "[A-Z]|[a-z]|[0-9].+(?=.+@)")
+    @Pattern(regexp = "(?=[A-Z]|[a-z]|[0-9]).+(?=.+@)")
     private String email;
 
     @Column(name = "creation_date", nullable = false, updatable = false)
@@ -52,7 +52,7 @@ public class User {
     private VisibilityType visibility;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "goal.user_id")
+    @OneToMany(mappedBy = "user_id")
     private ArrayList<Goal> goals;
     /*
     @JsonIgnore

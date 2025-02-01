@@ -1,12 +1,14 @@
 package com.EuConsigo.api.models;
 
 import com.EuConsigo.api.models.enums.VisibilityType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.UUID;
 
 @Entity
@@ -22,7 +24,7 @@ public class Goal {
     @NotNull
     private UUID goalId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false, updatable = false)
     @NotNull
     private User userId;
@@ -44,6 +46,10 @@ public class Goal {
 
     @Column(name = "deadline_date")
     private LocalDateTime deadlineDate;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "goalId", cascade = CascadeType.REMOVE)
+    private ArrayList<Task> tasks;
 
 
     public Goal(User userId, String tittle, String description, VisibilityType visibility, Boolean achieved, LocalDateTime deadlineDate) {

@@ -21,7 +21,7 @@ public class Task {
     @NotNull
     private UUID taskId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "goal_id", nullable = false, updatable = false)
     @NotNull
     private Goal goalId;
